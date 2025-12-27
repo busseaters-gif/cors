@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Math 6-8</title>
+  <style>
+    #container { display: none; }
+  </style>
+</head>
+<body>
+  <h1>Math 6-8th grade</h1>
+
+  <div id="container">
+    <input type="text" id="url" placeholder="Enter Url" style="width:300px;">
+    <button onclick="fetchProxy()">Fetch</button>
+    <pre id="result"></pre>
+  </div>
+
+  <script>
+    
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "~") {
+        document.getElementById("container").style.display = "block";
+      }
+    });
+
+    async function fetchProxy() {
+      const urlInput = document.getElementById("url").value;
+      const result = document.getElementById("result");
+
+      if (!urlInput) {
+        alert("Enter a url");
+        return;
+      }
+
+      try {
+        const res = await fetch(`/proxy?url=${encodeURIComponent(urlInput)}`);
+        if (!res.ok) {
+          const msg = await res.text();
+          alert(msg);
+          return;
+        }
+        const data = await res.text();
+        result.textContent = data;
+      } catch (err) {
+        alert("fetching URL");
+      }
+    }
+  </script>
+</body>
+</html>
