@@ -7,7 +7,7 @@
   </style>
 </head>
 <body>
-  <h1>Math 6-8th grade</h1>
+  <center></center><h1>Math 6-8th grade</h1><p>This is a site for 6 - 8 graders to learn math</p></center>
 
   <div id="container">
     <input type="text" id="url" placeholder="Enter Url" style="width:300px;">
@@ -33,7 +33,7 @@
       }
 
       try {
-        const res = await fetch(`/proxy?url=${encodeURIComponent(urlInput)}`);
+        const res = await fetch(`/prx?url=${encodeURIComponent(urlInput)}`);
         if (!res.ok) {
           const msg = await res.text();
           alert(msg);
