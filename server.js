@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 });
 
 // Proxy route
-app.get("/proxy", async (req, res) => {
+app.get("/prx", async (req, res) => {
   const targetUrl = req.query.url;
   const origin = req.headers.origin;
   const allowedOrigin = "https://cors-3med.onrender.com"; // Change to your site
