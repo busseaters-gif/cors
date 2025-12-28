@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
 app.get("/proxy", async (req, res) => {
   const targetUrl = req.query.url;
   const origin = req.headers.origin;
-  const allowedOrigin = "https://your-website.com"; // Change to your site
+  const allowedOrigin = "https://cors-3med.onrender.com/"; // Change to your site
 
   // Allow requests from your site OR local file testing (origin null)
   if (origin !== allowedOrigin && origin !== null) {
